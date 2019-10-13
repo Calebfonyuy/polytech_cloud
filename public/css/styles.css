@@ -1,0 +1,38 @@
+a{
+    color: #ff5050;
+}
+
+a:hover{
+    color: #ff1010;
+}
+
+@media(max-width: 600px){
+    #main-nav{
+        width: 20%;
+    }
+}
+
+@media(min-width: 599.99px){
+    #content-section{
+        margin-top: 80px;
+    }
+}
+
+@media(max-width: 992px){
+    #content-section{
+        margin-top: 150px;
+    }
+}
+
+.depts a{
+    color: white;
+}
+.depts a:hover{
+    color: white;
+}
+.depts>div{
+    border-radius: 20px;
+}
+.tiny{
+    font-size: 75%;
+}
