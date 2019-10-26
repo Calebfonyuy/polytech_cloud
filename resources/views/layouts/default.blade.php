@@ -21,7 +21,7 @@
         @yield('header')
     </section>
 
-    <section id="content-section">
+    <section id="content-section" class="mb-5">
         <div>
             @yield('second_header')
         </div>
@@ -30,7 +30,7 @@
 
     <section>
         <div class="fixed-bottom bg-dark m-0 text-center text-white h6">
-            Developer par <b>L'&eacute;quipe</b> de l'ENSP.<br>
+            Developpé par <b>L&eacute;quipe</b> de l'ENSP.<br>
             <a href="mailto:lequipe.enspy@gmail.com?Subject=CLOUD%20ENSP" target="_blank">Contacter Nous</a>
         </div>
     </section>

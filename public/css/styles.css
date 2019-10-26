@@ -24,10 +24,10 @@ a:hover{
     }
 }
 
-.depts a{
+.depts{
     color: white;
 }
-.depts a:hover{
+.depts hover{
     color: white;
 }
 .depts>div{
@@ -35,4 +35,8 @@ a:hover{
 }
 .tiny{
     font-size: 75%;
+}
+
+#navdata .btn-link:hover{
+    background-color: rgba(80,80,80, 0.9);
 }
