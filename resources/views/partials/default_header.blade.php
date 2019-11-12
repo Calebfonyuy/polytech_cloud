@@ -1,7 +1,7 @@
 <div class="nav navbar fixed-top bg-dark">
     @if ($state!=0)
         <div class="col-lg-6 col-md-6 row">
-            <div class="col-2">
+            <div class="col-2 d-none d-md-block">
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('images/logo.jpg') }}" height="60" alt="LOGO EQUIPE">
                 </a>

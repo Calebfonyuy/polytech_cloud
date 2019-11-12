@@ -17,7 +17,7 @@ class CreateClassesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('departement');
             $table->string('nom',50);
-            $table->string('description');
+            $table->longText('description');
             $table->string('photo')->nullable();
             $table->timestamps();
         });

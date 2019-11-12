@@ -18,7 +18,7 @@ class CreateMatieresTable extends Migration
             $table->integer('departement');
             $table->integer('classe');
             $table->string('nom',50);
-            $table->string('description');
+            $table->longText('description');
             $table->integer('credits');
             $table->integer('semester');
             $table->integer('status')->default(1);

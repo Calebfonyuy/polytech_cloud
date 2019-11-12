@@ -48,7 +48,7 @@
                         <label for="annee" class="form-label">Ann&eacute;e Academique</label>
                         <select name="annee" id="annee" class="form-control">
                             <option value="00">--Choisir--</option>
-                            @for ($i = 2000; $i <= (int)date('Y'); $i++)
+                            @for ($i = 2010; $i <= (int)date('Y'); $i++)
                                 <option value="{{ $i."-".($i+1) }}">{{ $i."-".($i+1) }}</option>
                             @endfor
                         </select>
@@ -66,6 +66,7 @@
                     <div class="col-lg-4 col-md-4 p-2 border">
                         <label for="nom" class="form-label">Nom du document</label>
                         <input type="text" name="nom" id="nom" class="form-control" required>
+                        <span class="invalid-feedback">Nom Invalide</span>
                     </div>
                     <div class="col-lg-4 col-md-4 p-2 border">
                         <label for="lien" class="form-label">Lien du document</label>
@@ -151,7 +152,7 @@
                 let value = '<option value="00">--Choisir--</option>';
                 for (let i = 0; i < classes.length; i++) {
                     const element = classes[i];
-                    if (element.id==$(this).val()) {
+                    if (element.departement==$(this).val()) {
                         value += '<option value="'+element.id+'">'+element.nom+'</option>'
                     }
                 }
@@ -208,6 +209,11 @@
 
             if ($('#type').val()=="99") {
                 $('#type').addClass('is-invalid');
+                valid = false;
+            }
+
+            if ($('#nom').val()==""||$('#nom').val().length>100) {
+                $('#nom').addClass('is-invalid');
                 valid = false;
             }
 

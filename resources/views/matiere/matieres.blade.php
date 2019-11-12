@@ -31,7 +31,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-lg-6 col-md-6 m-auto border">
+            <div class="col-lg-6 col-md-6 ml-auto mr-auto border">
                 <legend class="text-center h4">Ajouter une matiere</legend>
                 <form action="{{ route('matiere.store') }}" method="post" class="form">
                     {{ csrf_field() }}

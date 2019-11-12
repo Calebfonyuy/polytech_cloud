@@ -4,11 +4,11 @@
     <style>
         .doc{
             margin: auto auto 20px auto;
-            height: 250px;
-            width: 200px;
+            height: 300px;
+            width: 250px;
         }
         .card-img-top{
-            height: 80px%;
+            height: 80px;
             width: 100px;
             margin: auto;
         }
@@ -29,8 +29,8 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="col-11 m-auto row">
-            <div class="col-12 text-center h5 pt-4">
+        <div class="row">
+            <div class="text-center col-12 h5">
                 <b>{{ $matiere->nom }}</b><br> <b>{{ $annee }} </b>
             </div>
                 @if (count($epreuves)>0)
@@ -44,10 +44,13 @@
                                 <img src="{{ asset('images/file_icon.png') }}" alt="" class="card-img-top">
                                 <div class="card-footer">
                                     <div>
-                                        <b>{{ $document->nom }}</b>
+                                        <b class="tiny">{{ $document->nom }}</b>
                                     </div>
                                     <div>
-                                        <a href="//{{ $document->lien }}" target="_blank">Telecharger</a>
+                                        <a href="//{{ $document->lien }}" target="_blank" class="tiny">
+                                            <span class="fa fa-download"></span>
+                                            Telecharger
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -69,10 +72,13 @@
                                 <img src="{{ asset('images/file_icon.png') }}" alt="" class="card-img-top">
                                 <div class="card-footer">
                                     <div>
-                                        <b>{{ $document->nom }}</b>
+                                        <b class="tiny">{{ $document->nom }}</b>
                                     </div>
                                     <div>
-                                        <a href="//{{ $document->lien }}" target="_blank">Telecharger</a>
+                                        <a href="//{{ $document->lien }}" target="_blank" class="tiny">
+                                            <span class="fa fa-download"></span>
+                                            Telecharger
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -1,99 +1,64 @@
 @extends('layouts.dashboard',['section'=>'Statistics'])
 
-@section('content')
-    <div class="container-fluid row">
-        <div class="col-10 m-auto text-center h3">
-            <b>Statistiques generales du site</b>
-        </div>
-        
-        <div class="col-12">
-            <legend>Departements</legend>
-            <hr>
-            <div class="row">
-                
-            </div>
-            <table class="table table-hover table-bordered">
-                <thead class="thead-light">
-                    <th>No</th>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Nombre des niveaux</th>
-                    <th>Nombre des matieres</th>
-                    <th>Nombre des documents</th>
-                </thead>
-                <tbody>
-                    @php
-                        $i=1;
-                    @endphp
-                    @foreach ($departements as $dept)
-                        <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $dept->nom }}</td>
-                            <td>{{ $dept->description }}</td>
-                            <td>{{ $dept->classes }}</td>
-                            <td>{{ $dept->matieres }}</td>
-                            <td>{{ $dept->documents }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-        <div class="col-12">
-            <legend>Niveaux</legend>
-            <hr>
-            <table class="table table-hover table-bordered">
-                <thead class="thead-light">
-                    <th>No</th>
-                    <th>Nom</th>
-                    <th>Departement</th>
-                    <th>Description</th>
-                    <th>Nombre des matieres</th>
-                    <th>Nombre des documents</th>
-                </thead>
-                <tbody>
-                    @php
-                        $i=1;
-                    @endphp
-                    @foreach ($classes as $class)
-                        <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $class->nom }}</td>
-                            <td>{{ $class->departement }}</td>
-                            <td>{{ $class->description }}</td>
-                            <td>{{ $class->matieres }}</td>
-                            <td>{{ $class->documents }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+@section('add-css')
+    <style>
+        th, td{
+            width: 50%;
+        }
+    </style>
+@endsection
 
+@section('content')
+    <div class="container-fluid">
+        <div class="col-10 m-auto text-center h3">
+            <legend><b>Statistiques generales du site</b></legend>
+        </div>
         <div class="col-12">
-            Matieres
-            <hr>
-            <table class="table table-hover table-bordered">
-                <thead class="thead-light">
-                    <th>No</th>
-                    <th>Nom</th>
-                    <th>Niveau</th>
-                    <th>Description</th>
-                    <th>Semestre</th>
-                    <th>Nombre des documents</th>
-                </thead>
-                @php
-                    $i=1;
-                @endphp
-                @foreach ($matieres as $mat)
-                    <tr>
-                        <td>{{ $i++ }}</td>
-                        <td>{{ $mat->nom }}</td>
-                        <td>{{ $mat->nom_clas }}<br>{{ $mat->nom_dept }}</td>
-                        <td>{{ $mat->description }}</td>
-                        <td>{{ $mat->semester }}</td>
-                        <td>{{ $mat->documents }}</td>
-                    </tr>
-                @endforeach
-            </table>
+            @foreach ($departements as $dept)
+                <div>
+                    <legend><b>{{ $dept->nom }}</b></legend>
+                    <hr>
+                    <ol>
+                        @foreach ($dept->classes as $classe)
+                            <li class="h4">{{ $classe->nom }}</li>
+                            <div class="bg-light">
+                                <span class="h5">S&eacute;mestre 1</span>
+                                <table class="m-1 table table-hover table-bordered table-sm">
+                                    <thead class="thead-dark">
+                                        <th>Matiere</th>
+                                        <th>Documents</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($classe->sem1 as $mat)
+                                            <tr>
+                                                <td>{{ $mat->nom }}</td>
+                                                <td>{{ $mat->documents }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-selight">
+                                <span class="h5">S&eacute;mestre 2</span>
+                                <table class="m-1 table table-hover table-bordered table-sm">
+                                    <thead class="thead-dark">
+                                        <th>Matiere</th>
+                                        <th>Documents</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($classe->sem2 as $mat)
+                                            <tr>
+                                                <td>{{ $mat->nom }}</td>
+                                                <td>{{ $mat->documents }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        @endforeach
+                    </ol>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

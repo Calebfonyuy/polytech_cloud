@@ -1,5 +1,19 @@
 @extends('layouts.dashboard',['section'=>'Academie'])
 
+@section('add-css')
+    <style>
+        .card-footer div{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 250px;
+        }
+        .card img{
+            max-width: 200px;
+        }
+    </style>
+@endsection
+
 @section('second_header')
     @include('dashboard.admin.admin_head')
 @endsection
@@ -25,7 +39,9 @@
                                 <img src="{{ asset('images/'.$depart->photo) }}" height="150" width="150" alt="{{ $depart->nom }}">
                             </div>
                             <div class="card-footer text-center">
-                                {{ $depart->description }}
+                                <div>
+                                    {{ $depart->description }}
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -59,7 +75,9 @@
                                 <img src="{{ asset('images/'.$class->photo) }}" height="150" width="150" alt="{{ $class->nom }}">
                             </div>
                             <div class="card-footer text-center">
-                                {{ $class->description }}
+                                <div>
+                                    {{ $class->description }}
+                                </div>
                             </div>
                         </a>
                     </div>

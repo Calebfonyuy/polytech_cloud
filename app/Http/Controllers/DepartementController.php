@@ -50,7 +50,7 @@ class DepartementController extends Controller
         if ($request->photo!= null) {
             $file = $request->file('photo');
             $fileName = $request->photo->getClientOriginalName();
-            $file->move(public_path('images'), $fileName);
+            $file->move(public_path('../../public_html/images'), $fileName);
         }
 
         Departement::create([

@@ -53,7 +53,7 @@ class ClassController extends Controller
         if ($request->photo!=null) {
             $file = $request->file('photo');
             $filename = $request->photo->getClientOriginalName();
-            $file->move(public_path('images'),$filename);
+             $file->move(public_path('../../public_html/images'), $fileName);
         }
 
         Classe::create([

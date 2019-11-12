@@ -35,6 +35,8 @@ Route::post('/connexion', 'ConnectionController@signIn')->name('connexion');
 
 Route::post('/inscription', 'ConnectionController@signUp')->name('inscription');
 
+Route::post('/pass_reset', 'ConnectionController@resetPassword')->name('pass_reset');
+
 Route::group(['middleware' => 'auth','prefix'=>'compte'], function () {
     Route::get('/accueil',function (){
         $years = DB::select('select distinct annee from documents order by annee asc');

@@ -44,10 +44,8 @@
                 <thead class="thead-light">
                     <th>No</th>
                     <th>Nom</th>
-                    <th>Description</th>
                     <th>Nombre des niveaux</th>
                     <th>Nombre des matieres</th>
-                    <th>Nombre des documents</th>
                 </thead>
                 <tbody>
                     @php
@@ -57,10 +55,8 @@
                         <tr>
                             <td>{{ $i++ }}</td>
                             <td>{{ $dept->nom }}</td>
-                            <td>{{ $dept->description }}</td>
                             <td>{{ $dept->classes }}</td>
                             <td>{{ $dept->matieres }}</td>
-                            <td>{{ $dept->documents }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -74,9 +70,7 @@
                     <th>No</th>
                     <th>Nom</th>
                     <th>Departement</th>
-                    <th>Description</th>
                     <th>Nombre des matieres</th>
-                    <th>Nombre des documents</th>
                 </thead>
                 <tbody>
                     @php
@@ -87,9 +81,7 @@
                             <td>{{ $i++ }}</td>
                             <td>{{ $class->nom }}</td>
                             <td>{{ $class->departement }}</td>
-                            <td>{{ $class->description }}</td>
                             <td>{{ $class->matieres }}</td>
-                            <td>{{ $class->documents }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -104,7 +96,6 @@
                     <th>No</th>
                     <th>Nom</th>
                     <th>Niveau</th>
-                    <th>Description</th>
                     <th>Semestre</th>
                     <th>Nombre des documents</th>
                 </thead>
@@ -116,7 +107,6 @@
                         <td>{{ $i++ }}</td>
                         <td>{{ $mat->nom }}</td>
                         <td>{{ $mat->nom_clas }}<br>{{ $mat->nom_dept }}</td>
-                        <td>{{ $mat->description }}</td>
                         <td>{{ $mat->semester }}</td>
                         <td>{{ $mat->documents }}</td>
                     </tr>

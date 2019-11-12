@@ -13,15 +13,18 @@
         <div class="text-center m-3 h3">
             <b>Mati&egrave;res de {{ $class->nom }}-{{ $departement->nom }}</b>
         </div>
-        <div class="col-11 m-auto row">
+        <div class="m-1 row">
             <div class="col-12  text-capitalize h4">
                 Premiere semestre
                 <hr>
             </div>
             @foreach ($matieres as $mat)
                 @if ($mat->semester==1)
-                    <div class="col-lg-3 col-md-3 col-sm-5 h-100 card bg-dark text-white item">
-                        <div class="card-header h5">{{ $mat->nom }}</div>
+                    <div class="col-lg-3 col-md-3 col-sm-5 h-100 m-1 card bg-dark text-white item">
+                        <div class="card-header">
+                            <span class="h4 font-weight-bold">{{ $mat->nom }}</span><br>
+                            Crédits: {{ $mat->credits }}
+                        </div>
                         <div class="card-body text-center">
                             {{ $mat->description }}
                         </div>
@@ -50,7 +53,7 @@
             </div>
             @foreach ($matieres as $mat)
                 @if ($mat->semester==2)
-                    <div class="col-lg-3 col-md-3 col-sm-5 h-100 card bg-dark text-white item">
+                    <div class="col-lg-3 col-md-3 col-sm-5 m-1 h-100 card bg-dark text-white item">
                         <div class="card-header h5">{{ $mat->nom }}</div>
                         <div class="card-body text-center">
                             {{ $mat->description }}

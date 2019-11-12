@@ -1,5 +1,17 @@
 @extends('layouts.dashboard',['section'=>$departement->nom])
 
+@section('add-css')
+    <style>
+        .card-footer{
+            overflow: hidden;
+            text-overflow: wrap;
+        }
+        .card img{
+            max-width: 200px;
+        }
+    </style>
+@endsection
+
 @section('second_header')
     @include('dashboard.admin.admin_head')
 @endsection
@@ -23,7 +35,7 @@
            </div>
             <div class="row">
                 @foreach ($classes as $class)
-                    <div class="card m-1">
+                    <div class="col-lg-5 col-md-5 card m-auto">
                         <a href="{{ route('class.show',$class) }}">
                             <div class="card-header text-center">
                                 <div class="h3">

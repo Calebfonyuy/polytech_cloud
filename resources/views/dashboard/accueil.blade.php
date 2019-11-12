@@ -67,7 +67,7 @@
                 <div class="d-none d-lg-none d-md-block">
                     BIENVENU SUR LE CLOUD
                 </div>
-                <div class="d-blocks d-sm-none">
+                <div class="d-block d-sm-none">
                     BIENVENU SUR LE CLOUD
                 </div>
             </div>

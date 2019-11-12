@@ -98,4 +98,25 @@ class ConnectionController extends Controller
         Auth::logout();
         return redirect()->route('home');
     }
+
+    public function resetPassword(Request $request){
+        if ($request->get('step')==1) {
+            $user = User::where('matricule',$request->get('matricule'))->get()->first();
+            if ($user==null) {
+                return 'mat_err';
+            }
+
+            if ($user->email==$request->get('email')) {
+                return json_encode($user);
+            } else {
+                return 'mail_err';
+            }
+        } else {
+            $user = User::where('matricule',$request->get('matricule'))->get()->first();
+            $user->password = bcrypt($request->get("password"));
+            $user->save();
+            return "OK";
+        }
+        
+    }
 }
