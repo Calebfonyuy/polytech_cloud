@@ -14,12 +14,13 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('departement');
+            $table->increments('id');
+            $table->unsignedInteger('departement');
             $table->string('nom',50);
             $table->longText('description');
             $table->string('photo')->nullable();
             $table->timestamps();
+            $table->foreign('departement')->references('id')->on('departements');
         });
     }
 

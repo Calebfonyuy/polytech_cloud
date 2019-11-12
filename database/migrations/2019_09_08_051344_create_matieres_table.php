@@ -14,15 +14,17 @@ class CreateMatieresTable extends Migration
     public function up()
     {
         Schema::create('matieres', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('departement');
-            $table->integer('classe');
+            $table->increments('id');
+            $table->unsignedInteger('departement');
+            $table->unsignedInteger('classe');
             $table->string('nom',50);
             $table->longText('description');
             $table->integer('credits');
             $table->integer('semester');
             $table->integer('status')->default(1);
             $table->timestamps();
+            $table->foreign('departement')->references('id')->on('departements');
+            $table->foreign('classe')->references('id')->on('classes');
         });
     }
 
